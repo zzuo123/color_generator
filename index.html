@@ -66,20 +66,14 @@
         document.querySelector("#history").appendChild(colorlist);
         window.addEventListener("keydown", event => {
             if (event.key == " ") {
-                let color = getRandomColor()
-                document.body.style.background = color;
-                list.push(color);
-                let li = document.createElement("li");
-                li.style.backgroundColor = color;
-                li.style.border = "2px solid black";
-                li.appendChild(document.createTextNode(color));
-                colorlist.appendChild(li);
+                addColor();
             } else if (event.key == "b" || event.key == "B") {
                 deleteLast();
             }
         });
         let button = document.querySelector("a");
         button.addEventListener("click", () => { deleteLast(); });
+        window.addEventListener("touchstart", () => { addColor(); });
         function deleteLast() {
             if (list.length > 1) {
                 list.pop();
@@ -88,6 +82,16 @@
                 list.push(newcol);
                 colorlist.removeChild(colorlist.lastChild);
             }
+        }
+        function addColor() {
+            let color = getRandomColor()
+            document.body.style.background = color;
+            list.push(color);
+            let li = document.createElement("li");
+            li.style.backgroundColor = color;
+            li.style.border = "2px solid black";
+            li.appendChild(document.createTextNode(color));
+            colorlist.appendChild(li);
         }
         function getRandomColor() {
             var letters = '0123456789ABCDEF';
