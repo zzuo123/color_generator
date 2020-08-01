@@ -12,5 +12,6 @@ Hosted at : https://zzuo123.github.io/color_generator/
 * Touch anywhere to generate color
 * Press the "Back" button to remove most recent color
 * Press the "Clear" button to clear all saved colors
+* You can scroll the page without generating new color
 
 # ENJOY!
