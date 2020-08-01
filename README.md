@@ -8,9 +8,9 @@ Hosted at : https://zzuo123.github.io/color_generator/
 3. Press B to remove most recent color
 4. Press C to clear all saved colors
 
-* For touch screen users
-1. Touch anywhere to generate color
-2. Press the "Back" button to remove most recent color
-3. Press the "Clear" button to clear all saved colors
+# For touch screen users
+* Touch anywhere to generate color
+* Press the "Back" button to remove most recent color
+* Press the "Clear" button to clear all saved colors
 
 # ENJOY!
