@@ -30,12 +30,14 @@ window.addEventListener("touchend", (event) => {
 });
 
 function clearColor() {
+    window.scrollTo(0, document.body.scrollHeight);
     removeAllChildNodes(colorlist);
     list = [];
     document.body.style.background = "#FFFFFF";
 }
 
 function deleteColor() {
+    window.scrollTo(0, document.body.scrollHeight);
     if (list.length > 1) {
         list.pop();
         let newcol = list.pop();
