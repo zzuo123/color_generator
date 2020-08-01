@@ -5,103 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Color Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-
-        h1 {
-            position: fixed;
-            margin-top: 20px;
-            margin-left: 20%;
-            font-size: 70px;
-            text-align: center;
-            background-color: white;
-            padding: 15px;
-            border-radius: 15px;
-        }
-
-        a {
-            float: right;
-            font-size: 50px;
-            /* border: 2px solid black; */
-            border-radius: 20px;
-            padding: 5px;
-            background-color: dimgray;
-            color: white;
-        }
-
-        div.sticky {
-            position: -webkit-sticky;
-            /* Safari */
-            position: sticky;
-            top: 0;
-        }
-
-        div.fixed-right {
-            position: fixed;
-            margin-top: 40px;
-            margin-left: 85%;
-            text-align: right;
-        }
-
-        li {
-            font-size: 20px;
-        }
-    </style>
 </head>
 
 <body>
     <h1>Click space to change color!</h1>
-    <div class="fixed-right">
-        <a>Back(B)</a>
-    </div>
+    <button id="back">Back(B)</button>
+    <button id="clear">Clear(C)</button>
+    <p style="color: white;">White text in this color.<br><span style="color: black;">Black text in this color.</span>
+    </p>
     <div id="history"></div>
-    <script>
-        let list = ["white"];
-        let colorlist = document.createElement("ul");
-        colorlist.style.borderCollapse = "collapse";
-        colorlist.style.width = "10%";
-        document.querySelector("#history").appendChild(colorlist);
-        window.addEventListener("keydown", event => {
-            if (event.key == " ") {
-                addColor();
-            } else if (event.key == "b" || event.key == "B") {
-                deleteLast();
-            }
-        });
-        let button = document.querySelector("a");
-        button.addEventListener("click", () => { deleteLast(); });
-        window.addEventListener("touchstart", () => { addColor(); });
-        function deleteLast() {
-            if (list.length > 1) {
-                list.pop();
-                let newcol = list.pop();
-                document.body.style.background = newcol;
-                list.push(newcol);
-                colorlist.removeChild(colorlist.lastChild);
-            }
-        }
-        function addColor() {
-            let color = getRandomColor()
-            document.body.style.background = color;
-            list.push(color);
-            let li = document.createElement("li");
-            li.style.backgroundColor = color;
-            li.style.border = "2px solid black";
-            li.appendChild(document.createTextNode(color));
-            colorlist.appendChild(li);
-        }
-        function getRandomColor() {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-    </script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
