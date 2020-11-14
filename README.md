@@ -1,4 +1,4 @@
-# Tiny Websites
+# [Tiny Websites](https://zzuo123.github.io/tiny_sites/)
 
 This is a list of tiny websites that I made when I am learning front-end web development and some javascript.
 
