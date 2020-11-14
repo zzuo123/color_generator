@@ -1,5 +1,52 @@
-.sites{
-	padding-left: 5%;
-	padding-top: 2%;
-	padding-bottom: 2%;
+body {
+	margin: 0%;
+}
+
+#title {
+	background-image: linear-gradient(to bottom right, #fc0303, #f4fc03, #6ffc03, #03dffc, #0356fc, #b103fc, #fc0303);
+	font-family: 'Times New Roman', Times, serif;
+	color: rgb(68, 68, 68);
+	padding: 1em;
+	margin-top: 0%;
+	margin-bottom: 1%;
+	text-align: center;
+	font-size: 5em;
+}
+
+#blocks {
+	margin-left: 1%;
+	margin-left: 1%;
+}
+
+.site {
+	background-color: aqua;
+	border-radius: 10px;
+	text-align: center;
+	padding: 2%;
+	margin: 2px;
+	width: 120px;
+	float: left;
+}
+
+.rank {
+	margin-top: 0%;
+	margin-bottom: 0%;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #F7C201;
+}
+
+#footer p{
+	text-align: center;
+	font-size: 1.5em;
+}
+
+/* helpers */
+.clear {
+	clear:both;
+	margin: 0;
 }

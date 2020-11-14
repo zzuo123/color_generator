@@ -7,7 +7,7 @@ This is a list of tiny websites that I made when I am learning front-end web dev
 * Color Generator
 * Change Color
 
-# TO DO:
+## TO DO:
 
 - [ ] Touch-Up index.html
 - [ ] Touch-Up color-generator
