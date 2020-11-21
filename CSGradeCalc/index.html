@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<title>CS230 Grade Calculator 2020</title>
+</head>
+
+<body>
+	<div id="header">
+		<h2>UMA CS230 System Programming Class<br><br>Grade Calculator System (2020 version)</h2>
+	</div>
+
+
+	<div class="forms" id="form1">
+		<h3>Exam Grades</h3>
+		<form name="grades" action="" method="GET" onsubmit="return false">
+			<label for="exam1">Exam Grade 1 :</label>
+			<input type="number" id="exam1" name="exam1" min="0" max="20">
+			<label for="exam1">/ 20</label>
+			<br><br>
+			<label for="exam2">Exam Grade 2 :</label>
+			<input type="number" id="exam2" name="exam2" min="0" max="20">
+			<label for="exam1">/ 20</label>
+			<br><br>
+			<label for="exam3">Exam Grade 3 :</label>
+			<input type="number" id="exam3" name="exam3" min="0" max="20">
+			<label for="exam1">/ 20</label>
+			<br><br>
+			<label for="exam4">Exam Grade 4 :</label>
+			<input type="number" id="exam4" name="exam4" min="0" max="20">
+			<label for="exam1">/ 20</label>
+			<br><br>
+			<label for="exam5">Exam Grade 5 :</label>
+			<input type="number" id="exam5" name="exam5" min="0" max="20">
+			<label for="exam1">/ 20</label>
+			<br><br>
+			<label for="exam6">Exam Grade 6 :</label>
+			<input type="number" id="exam6" name="exam6" min="0" max="20">
+			<label for="exam1">/ 20</label>
+			<br><br>
+			<input type="button" value="Calculate" onClick="examGrade(this.form)">
+		</form>
+		<div class="results">
+			<p>Your result for the exam section will appear below if you click calculate.<br>Due to special circumstance this year, only the highest 5 out of the 6 exams will be counted towards your total grade. (36% / 5 exams)</p>
+			<hr>
+		</div>
+	</div>
+	<div class="stop-float"></div>
+
+
+	<div class="forms" id="form2">
+		<h3>Project Grades</h3>
+		<form name="grades" action="" method="GET" onsubmit="return false">
+			<label for="project1">Project Grade 1 :</label>
+			<input type="number" id="project1" name="project1" min="0" max="100">
+			<label for="project1">/ 100</label>
+			<br><br>
+			<label for="project2">Project Grade 2 :</label>
+			<input type="number" id="project2" name="project2" min="0" max="100">
+			<label for="project1">/ 100</label>
+			<br><br>
+			<label for="project3">Project Grade 3 :</label>
+			<input type="number" id="project3" name="project3" min="0" max="100">
+			<label for="project1">/ 100</label>
+			<br><br>
+			<label for="project4">Project Grade 4 :</label>
+			<input type="number" id="project4" name="project4" min="0" max="100">
+			<label for="project1">/ 100</label>
+			<br><br>
+			<label for="project5">Project Grade 5 :</label>
+			<input type="number" id="project5" name="project5" min="0" max="1000">
+			<label for="project1">/ 1000</label>
+			<br><br><br>
+			<input type="button" value="Calculate" onClick="projectGrade(this.form)">
+		</form>
+		<div class="results">
+			<p>Your result for the project section will appear below if you click calculate.<br>Due to special circumstance this year, only the highest 4 out of the 5 projects will be counted towards your total grade. (40% / 4 projects)</p>
+			<hr>
+		</div>
+	</div>
+	<div class="stop-float"></div>
+
+
+	<div class="forms" id="form3">
+		<h3>Lab Grades</h3>
+		<form name="grades" action="" method="GET" onsubmit="return false">
+			<label for="lab1">Lab Grade 1 :</label>
+			<input type="number" id="lab1" name="lab1" min="0" max="5">
+			<label for="lab1">/ 5</label>
+			<br><br>
+			<label for="lab2">Lab Grade 2 :</label>
+			<input type="number" id="lab2" name="lab2" min="0" max="5">
+			<label for="lab1">/ 5</label>
+			<br><br>
+			<label for="lab3">Lab Grade 3 :</label>
+			<input type="number" id="lab3" name="lab3" min="0" max="5">
+			<label for="lab1">/ 5</label>
+			<br><br>
+			<label for="lab4">Lab Grade 4 :</label>
+			<input type="number" id="lab4" name="lab4" min="0" max="4">
+			<label for="lab1">/ 4</label>
+			<br><br>
+			<label for="lab5">Lab Grade 5 :</label>
+			<input type="number" id="lab5" name="lab5" min="0" max="4">
+			<label for="lab1">/ 4</label>
+			<br><br>
+			<input type="button" value="Calculate" onClick="labGrade(this.form)">
+		</form>
+		<div class="results">
+			<p>Your result for the lab section will appear below if you click calculate.<br>Due to special circumstance this year, only the highest 4 out of the 5 labs will be counted towards your total grade. (10% / 4 labs)</p>
+			<hr>
+		</div>
+	</div>
+	<div class="stop-float"></div>
+
+	
+	<div class="forms" id="form4">
+		<h3>Challenge Grades</h3>
+		<form name="grades" action="" method="GET" onsubmit="return false">
+			<label for="challenge1">Challenge Grade 1 :</label>
+			<input type="number" id="challenge1" name="challenge1" min="0" max="6">
+			<label for="challenge1">/ 6</label>
+			<br><br>
+			<label for="challenge2">Challenge Grade 2 :</label>
+			<input type="number" id="challenge2" name="challenge2" min="0" max="11">
+			<label for="challenge2">/ 11</label>
+			<br><br>
+			<label for="challenge3">Challenge Grade 3 :</label>
+			<input type="number" id="challenge3" name="challenge3" min="0" max="25">
+			<label for="challenge3">/ 25</label>
+			<br><br>
+			<label for="challenge4">Challenge Grade 4 :</label>
+			<input type="number" id="challenge4" name="challenge4" min="0" max="11">
+			<label for="challenge4">/ 11</label>
+			<br><br>
+			<label for="challenge5">Challenge Grade 5 :</label>
+			<input type="number" id="challenge5" name="challenge5" min="0" max="11">
+			<label for="challenge5">/ 11</label>
+			<br><br>
+			<label for="challenge6">Challenge Grade 6 :</label>
+			<input type="number" id="challenge6" name="challenge6" min="0" max="17">
+			<label for="challenge6">/ 17</label>
+			<br><br>
+			<label for="challenge7">Challenge Grade 7 :</label>
+			<input type="number" id="challenge7" name="challenge7" min="0" max="31">
+			<label for="challenge7">/ 31</label>
+			<br><br>
+			<label for="challenge8">Challenge Grade 8 :</label>
+			<input type="number" id="challenge8" name="challenge8" min="0" max="20">
+			<label for="challenge8">/ 20</label>
+			<br><br>
+			<label for="challenge9">Challenge Grade 9 :</label>
+			<input type="number" id="challenge9" name="challenge9" min="0" max="11">
+			<label for="challenge9">/ 11</label>
+			<br><br>
+			<label for="challenge10">Challenge Grade 10 :</label>
+			<input type="number" id="challenge10" name="challenge10" min="0" max="16">
+			<label for="challenge10">/ 16</label>
+			<br><br>
+			<label for="challenge11">Challenge Grade 11 :</label>
+			<input type="number" id="challenge11" name="challenge11" min="0" max="21">
+			<label for="challenge11">/ 21</label>
+			<br><br>
+			<label for="challenge12">Challenge Grade 12 :</label>
+			<input type="number" id="challenge12" name="challenge12" min="0" max="18">
+			<label for="challenge12">/ 18</label>
+			<br><br>
+			<input type="button" value="Calculate" onClick="challengeGrade(this.form)">
+		</form>
+		<div class="results">
+			<p>Your result for the challenge section will appear below if you click calculate.<br>Due to special circumstance this year, only the highest 11 out of the 12 challenges will be counted towards your total grade. (14% / 11 challenges)</p>
+			<hr>
+		</div>
+	</div>
+	<div class="stop-float"></div>
+
+
+	<div class="forms" id="form5">
+		<h3>Final Grade</h3>
+		<input type="button" value="Click Here" onClick="finalGrade()">
+		<hr>
+		<div class="fin-res"></div>
+		<br><br>
+		<div class="stop-float"></div>
+	</div>
+
+</body>
+
+</html>

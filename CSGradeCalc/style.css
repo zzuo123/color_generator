@@ -1,0 +1,75 @@
+body {
+	margin: 0;
+	font-family: Lato, sans-serif;
+}
+
+#header {
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://lh5.googleusercontent.com/99J9VKu4UU7JMMM9w_4S9cM_UhoICgHGQbXOw0JQmyiBVuCyXJEPJVzCcWrNNwrdwFi5myg=w16383");
+	background-size: cover;
+	background-position: center center;
+	padding-top: 6em;
+	margin-bottom: 2em;
+	min-height: 250px;
+}
+
+#header h2 {
+	text-align: center;
+	color: rgba(255, 255, 255, 1);
+	font-weight: 100;
+	font-size: 22pt;
+}
+
+.forms h3 {
+	text-align: center;
+	background-color: green;
+	line-height: 2;
+}
+
+.forms form {
+	float: left;
+	margin-left: 50px;
+	margin-right: 100px;
+}
+
+.forms .results {
+	margin-right: 100px;
+	padding-bottom: 0;
+}
+
+.forms .fin-res {
+	background-color: yellow;
+	text-align: center;
+	width: 100%;
+}
+
+.stop-float {
+	clear: both;
+}
+
+#form5 {
+	position: relative;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+}
+
+#form5 h3 {
+	width: 100%;
+}
+
+#form5 p{
+	text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+	/* result text goes to bottom on mobile screen */
+	.forms form {
+		float: none;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.forms .results {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
