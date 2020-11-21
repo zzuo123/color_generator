@@ -33,13 +33,11 @@ function addResult(divId, content) {
 // calculate exam grade and update exam result
 function examGrade(form) {
 	// all are stored in percentagr (rounded)
+	var highest = [20, 20, 20, 20, 20, 20];
 	exams = new Array(6);
-	exams[0] = parseInt(form.exam1.value) / 20 * 100;
-	exams[1] = parseInt(form.exam2.value) / 20 * 100;
-	exams[2] = parseInt(form.exam3.value) / 20 * 100;
-	exams[3] = parseInt(form.exam4.value) / 20 * 100;
-	exams[4] = parseInt(form.exam5.value) / 20 * 100;
-	exams[5] = parseInt(form.exam6.value) / 20 * 100;
+	for (var i = 0; i < form.length - 1; i++) {
+		exams[i] = parseInt(form[i].value) / highest[i] * 100;
+	}
 	exams = exams.filter(function (val) {
 		return !isNaN(val);
 	});
@@ -55,9 +53,9 @@ function examGrade(form) {
 		min = 0;
 	}
 	var total = (sum * percent / 5);
-	if(total > 36) { // bound check
+	if (total > 36) { // bound check
 		total = 36;
-	} else if(total < 0){
+	} else if (total < 0) {
 		total = 0
 	}
 	var resnode = addResult("form1", "Total = " + Math.round(total) + "% out of 36%");
@@ -75,12 +73,12 @@ function examGrade(form) {
 // calculate project grade and update project result
 function projectGrade(form) {
 	// all are stored in percentagr (rounded)
-	projects = new Array(6);
-	projects[0] = parseInt(form.project1.value) / 100 * 100;
-	projects[1] = parseInt(form.project2.value) / 100 * 100;
-	projects[2] = parseInt(form.project3.value) / 100 * 100;
-	projects[3] = parseInt(form.project4.value) / 100 * 100;
-	projects[4] = parseInt(form.project5.value) / 1000 * 100;
+	projects = new Array(5);
+	var highest = [100, 100, 100, 100, 1000];
+	projects = new Array(5);
+	for (var i = 0; i < form.length - 1; i++) {
+		projects[i] = parseInt(form[i].value) / highest[i] * 100;
+	}
 	projects = projects.filter(function (val) {
 		return !isNaN(val);
 	});
@@ -96,9 +94,9 @@ function projectGrade(form) {
 		min = 0;
 	}
 	var total = (sum * percent / 4);
-	if(total > 40) { // bound check
+	if (total > 40) { // bound check
 		total = 40;
-	} else if(total < 0){
+	} else if (total < 0) {
 		total = 0
 	}
 	var resnode = addResult("form2", "Total = " + Math.round(total) + "% out of 40%");
@@ -116,12 +114,11 @@ function projectGrade(form) {
 // calculate lab grade and update lab result
 function labGrade(form) {
 	// all are stored in percentagr (rounded)
-	labs = new Array(6);
-	labs[0] = parseInt(form.lab1.value) / 5 * 100;
-	labs[1] = parseInt(form.lab2.value) / 5 * 100;
-	labs[2] = parseInt(form.lab3.value) / 5 * 100;
-	labs[3] = parseInt(form.lab4.value) / 4 * 100;
-	labs[4] = parseInt(form.lab5.value) / 4 * 100;
+	var highest = [5, 5, 5, 4, 4];
+	labs = new Array(5);
+	for (var i = 0; i < form.length - 1; i++) {
+		labs[i] = parseInt(form[i].value) / highest[i] * 100;
+	}
 	labs = labs.filter(function (val) {
 		return !isNaN(val);
 	});
@@ -137,9 +134,9 @@ function labGrade(form) {
 		min = 0;
 	}
 	var total = (sum * percent / 4);
-	if(total > 10) { // bound check
+	if (total > 10) { // bound check
 		total = 10;
-	} else if(total < 0){
+	} else if (total < 0) {
 		total = 0
 	}
 	var resnode = addResult("form3", "Total = " + Math.round(total) + "% out of 10%");
@@ -157,19 +154,11 @@ function labGrade(form) {
 // calculate challenge grade and update challenge result
 function challengeGrade(form) {
 	// all are stored in percentagr (rounded)
-	challenges = new Array(6);
-	challenges[0] = parseInt(form.challenge1.value) / 6 * 100;
-	challenges[1] = parseInt(form.challenge2.value) / 11 * 100;
-	challenges[2] = parseInt(form.challenge3.value) / 25 * 100;
-	challenges[3] = parseInt(form.challenge4.value) / 11 * 100;
-	challenges[4] = parseInt(form.challenge5.value) / 11 * 100;
-	challenges[5] = parseInt(form.challenge6.value) / 17 * 100;
-	challenges[6] = parseInt(form.challenge7.value) / 31 * 100;
-	challenges[7] = parseInt(form.challenge8.value) / 20 * 100;
-	challenges[8] = parseInt(form.challenge9.value) / 11 * 100;
-	challenges[9] = parseInt(form.challenge10.value) / 16 * 100;
-	challenges[10] = parseInt(form.challenge11.value) / 21 * 100;
-	challenges[11] = parseInt(form.challenge12.value) / 18 * 100;
+	var highest = [6, 11, 25, 11, 11, 17, 31, 20, 11, 16, 21, 18];
+	challenges = new Array(12);
+	for (var i = 0; i < form.length - 1; i++) {
+		challenges[i] = parseInt(form[i].value) / highest[i] * 100;
+	}
 	challenges = challenges.filter(function (val) {
 		return !isNaN(val);
 	});
@@ -185,9 +174,9 @@ function challengeGrade(form) {
 		min = 0;
 	}
 	var total = (sum * percent / 11);
-	if(total > 14) { // bound check
+	if (total > 14) { // bound check
 		total = 14;
-	} else if(total < 0){
+	} else if (total < 0) {
 		total = 0
 	}
 	var resnode = addResult("form4", "Total = " + Math.round(total) + "% out of 14%");
@@ -212,29 +201,29 @@ function finalGrade() {
 	challengeGrade(forms[3].getElementsByTagName("form")[0]);
 	var sum = Math.round(grades[0] + grades[1] + grades[2] + grades[3]);
 	var message1 = "Your total grade is " + sum + "%";
-	var message2 = "Percentage breakdown: "+grades[0]+"% + "+grades[1]+"% + "+grades[2]+"% + "+grades[3]+"%";
+	var message2 = "Percentage breakdown: " + grades[0] + "% + " + grades[1] + "% + " + grades[2] + "% + " + grades[3] + "%";
 	var message3 = "Your final Grade : "
-	if(sum >= 93) {
+	if (sum >= 93) {
 		message3 += "A"
-	} else if(sum >=90) {
+	} else if (sum >= 90) {
 		message3 += "A-"
-	}else if(sum >=87) {
+	} else if (sum >= 87) {
 		message3 += "B+"
-	}else if(sum >=83) {
+	} else if (sum >= 83) {
 		message3 += "B"
-	}else if(sum >=80) {
+	} else if (sum >= 80) {
 		message3 += "B-"
-	}else if(sum >=77) {
+	} else if (sum >= 77) {
 		message3 += "C+"
-	}else if(sum >=73) {
+	} else if (sum >= 73) {
 		message3 += "C"
-	}else if(sum >=70) {
+	} else if (sum >= 70) {
 		message3 += "C-"
-	}else if(sum >=67) {
+	} else if (sum >= 67) {
 		message3 += "D+"
-	}else if(sum >=60) {
+	} else if (sum >= 60) {
 		message3 += "D"
-	}else{
+	} else {
 		message3 += "F"
 	}
 	var resdiv = forms[4].getElementsByClassName("fin-res")[0];
@@ -247,4 +236,5 @@ function finalGrade() {
 	addToRes(newres, message2, "h2");
 	addToRes(newres, message3, "h2");
 	resdiv.appendChild(newres);
+	window.scrollTo(0, document.body.scrollHeight); // scroll to bottom
 }

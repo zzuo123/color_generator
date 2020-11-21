@@ -57,8 +57,44 @@ body {
 	width: 100%;
 }
 
-#form5 p{
+#form5 p {
 	text-align: center;
+}
+
+#main-footer {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+	margin-top: 40px;
+}
+
+#main-footer a:visited {
+	color: white;
+}
+
+#main-footer a:hover {
+	color: rgb(255, 0, 0);
+}
+
+.fixed-button {
+	position: fixed;
+	top: 600px;
+	background-color: rgb(80, 80, 80);
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	/*rounded corner*/
+}
+
+.fixed-button:hover {
+	text-decoration: underline;
+}
+
+.fixed-button:visited {
+	text-decoration: underline;
 }
 
 @media only screen and (max-width: 600px) {
