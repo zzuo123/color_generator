@@ -54,7 +54,13 @@ function examGrade(form) {
 	if (!isFinite(min)) { // if no input, min will be infinity
 		min = 0;
 	}
-	var resnode = addResult("form1", "Total = " + Math.round(sum * percent / 5) + "% out of 36%");
+	var total = (sum * percent / 5);
+	if(total > 36) { // bound check
+		total = 36;
+	} else if(total < 0){
+		total = 0
+	}
+	var resnode = addResult("form1", "Total = " + Math.round(total) + "% out of 36%");
 	addToRes(resnode, "Lowest = " + min + "%");
 	addToRes(resnode, "Percentage breakdown:");
 	var breakdown = "";
@@ -62,7 +68,7 @@ function examGrade(form) {
 		breakdown += exams[i] + "% ";
 	}
 	addToRes(resnode, breakdown);
-	grades[0] = (sum * percent / 5);
+	grades[0] = total;
 }
 
 
@@ -89,7 +95,13 @@ function projectGrade(form) {
 	if (!isFinite(min)) { // if no input, min will be infinity
 		min = 0;
 	}
-	var resnode = addResult("form2", "Total = " + Math.round(sum * percent / 4) + "% out of 40%");
+	var total = (sum * percent / 4);
+	if(total > 40) { // bound check
+		total = 40;
+	} else if(total < 0){
+		total = 0
+	}
+	var resnode = addResult("form2", "Total = " + Math.round(total) + "% out of 40%");
 	addToRes(resnode, "Lowest = " + min + "%");
 	addToRes(resnode, "Percentage breakdown:");
 	var breakdown = "";
@@ -97,7 +109,7 @@ function projectGrade(form) {
 		breakdown += projects[i] + "% ";
 	}
 	addToRes(resnode, breakdown);
-	grades[1] = (sum * percent / 4);
+	grades[1] = total;
 }
 
 
@@ -124,7 +136,13 @@ function labGrade(form) {
 	if (!isFinite(min)) { // if no input, min will be infinity
 		min = 0;
 	}
-	var resnode = addResult("form3", "Total = " + Math.round(sum * percent / 4) + "% out of 10%");
+	var total = (sum * percent / 4);
+	if(total > 10) { // bound check
+		total = 10;
+	} else if(total < 0){
+		total = 0
+	}
+	var resnode = addResult("form3", "Total = " + Math.round(total) + "% out of 10%");
 	addToRes(resnode, "Lowest = " + min + "%");
 	addToRes(resnode, "Percentage breakdown:");
 	var breakdown = "";
@@ -132,7 +150,7 @@ function labGrade(form) {
 		breakdown += labs[i] + "% ";
 	}
 	addToRes(resnode, breakdown);
-	grades[2] = (sum * percent / 4);
+	grades[2] = total;
 }
 
 
@@ -166,7 +184,13 @@ function challengeGrade(form) {
 	if (!isFinite(min)) { // if no input, min will be infinity
 		min = 0;
 	}
-	var resnode = addResult("form4", "Total = " + Math.round(sum * percent / 11) + "% out of 14%");
+	var total = (sum * percent / 11);
+	if(total > 14) { // bound check
+		total = 14;
+	} else if(total < 0){
+		total = 0
+	}
+	var resnode = addResult("form4", "Total = " + Math.round(total) + "% out of 14%");
 	addToRes(resnode, "Lowest = " + min + "%");
 	addToRes(resnode, "Percentage breakdown:");
 	var breakdown = "";
@@ -174,7 +198,7 @@ function challengeGrade(form) {
 		breakdown += challenges[i] + "% ";
 	}
 	addToRes(resnode, breakdown);
-	grades[3] = (sum * percent / 11);
+	grades[3] = total;
 }
 
 // run all the calculation and returns final grade
