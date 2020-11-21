@@ -4,7 +4,7 @@ body {
 }
 
 #header {
-	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://lh5.googleusercontent.com/99J9VKu4UU7JMMM9w_4S9cM_UhoICgHGQbXOw0JQmyiBVuCyXJEPJVzCcWrNNwrdwFi5myg=w16383");
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("res/cs230header.gif");
 	background-size: cover;
 	background-position: center center;
 	padding-top: 6em;
