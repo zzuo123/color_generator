@@ -162,25 +162,26 @@ function challengeGrade(form) {
 	challenges = challenges.filter(function (val) {
 		return !isNaN(val);
 	});
-	var min = Math.min.apply(null, challenges);
+	challenges = challenges.sort((a, b) => a - b);
 	var sum = 0, percent = 0.14;
-	for (var i = 0; i < challenges.length; i++) {
-		sum += challenges[i];
+	var n = challenges.length - 10;
+	if (n < 0) {
+		n = 0;
 	}
-	if (challenges.length > 11) {
-		sum -= min;
+	for (; n < challenges.length; n++) {
+		sum += challenges[n];
 	}
-	if (!isFinite(min)) { // if no input, min will be infinity
-		min = 0;
-	}
-	var total = (sum * percent / 11);
+	var total = (sum * percent / 10);
 	if (total > 14) { // bound check
 		total = 14;
 	} else if (total < 0) {
 		total = 0
 	}
+	if (challenges.length == 0) {
+		challenges[0] = 0;
+	}
 	var resnode = addResult("form4", "Total = " + Math.round(total) + "% out of 14%");
-	addToRes(resnode, "Lowest = " + min + "%");
+	addToRes(resnode, "Lowest = " + challenges[0] + "%");
 	addToRes(resnode, "Percentage breakdown:");
 	var breakdown = "";
 	for (var i = 0; i < challenges.length; i++) {

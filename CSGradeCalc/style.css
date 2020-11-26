@@ -8,7 +8,7 @@ body {
 	background-size: cover;
 	background-position: center center;
 	padding-top: 6em;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 	min-height: 250px;
 }
 
@@ -17,6 +17,10 @@ body {
 	color: rgba(255, 255, 255, 1);
 	font-weight: 100;
 	font-size: 22pt;
+}
+
+#intro {
+	text-align: center;
 }
 
 .forms h3 {
